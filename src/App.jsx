@@ -55,6 +55,18 @@ function App() {
           </select>
         </div>
       </div>
+
+      <textarea
+        className="input-area"
+        placeholder="Enter text to translate..."
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        rows={5}
+      />
+
+      <button className="translate-btn" onClick={() => console.log('translate')}>
+        Translate
+      </button>
     </div>
   )
 }
