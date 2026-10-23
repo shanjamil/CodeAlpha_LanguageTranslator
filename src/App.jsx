@@ -23,6 +23,38 @@ function App() {
   return (
     <div className="translator">
       <h1>Language Translator</h1>
+
+      <div className="lang-selectors">
+        <div className="lang-group">
+          <label htmlFor="source-lang">From</label>
+          <select
+            id="source-lang"
+            value={sourceLang}
+            onChange={(e) => setSourceLang(e.target.value)}
+          >
+            {languages.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="lang-group">
+          <label htmlFor="target-lang">To</label>
+          <select
+            id="target-lang"
+            value={targetLang}
+            onChange={(e) => setTargetLang(e.target.value)}
+          >
+            {languages.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
     </div>
   )
 }
