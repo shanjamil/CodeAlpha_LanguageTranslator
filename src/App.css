@@ -37,3 +37,22 @@
   color: var(--text-h);
   cursor: pointer;
 }
+
+.input-area {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-family: var(--sans);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+  resize: vertical;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.input-area:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
