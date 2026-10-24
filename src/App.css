@@ -56,3 +56,23 @@
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
+
+.translate-btn {
+  padding: 10px 28px;
+  font-size: 16px;
+  font-family: var(--sans);
+  color: #fff;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.translate-btn:hover {
+  background-color: #4338ca;
+}
+
+.translate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
