@@ -21,12 +21,16 @@ function App() {
   const [error, setError] = useState('')
 
   const handleTranslate = async () => {
+    setLoading(true)
+
     const langPair = `|`
     const url = `https://api.mymemory.translated.net/get?q=&langpair=`
 
     const response = await fetch(url)
     const data = await response.json()
     setTranslatedText(data.responseData.translatedText)
+
+    setLoading(false)
   }
 
   return (
@@ -73,8 +77,12 @@ function App() {
         rows={5}
       />
 
-      <button className="translate-btn" onClick={handleTranslate}>
-        Translate
+      <button
+        className="translate-btn"
+        onClick={handleTranslate}
+        disabled={loading}
+      >
+        {loading ? 'Translating...' : 'Translate'}
       </button>
     </div>
   )
