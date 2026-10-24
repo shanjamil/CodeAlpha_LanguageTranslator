@@ -21,16 +21,38 @@ function App() {
   const [error, setError] = useState('')
 
   const handleTranslate = async () => {
+    setError('')
+    setTranslatedText('')
+
+    if (!inputText.trim()) {
+      setError('Please enter some text to translate.')
+      return
+    }
+
     setLoading(true)
 
-    const langPair = `|`
-    const url = `https://api.mymemory.translated.net/get?q=&langpair=`
+    try {
+      const langPair = `|`
+      const url = `https://api.mymemory.translated.net/get?q=&langpair=`
 
-    const response = await fetch(url)
-    const data = await response.json()
-    setTranslatedText(data.responseData.translatedText)
+      const response = await fetch(url)
 
-    setLoading(false)
+      if (!response.ok) {
+        throw new Error('Translation request failed. Please try again.')
+      }
+
+      const data = await response.json()
+
+      if (data.responseStatus !== 200) {
+        throw new Error(data.responseDetails || 'Translation failed.')
+      }
+
+      setTranslatedText(data.responseData.translatedText)
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -84,6 +106,8 @@ function App() {
       >
         {loading ? 'Translating...' : 'Translate'}
       </button>
+
+      {error && <p className="error-msg">{error}</p>}
     </div>
   )
 }
