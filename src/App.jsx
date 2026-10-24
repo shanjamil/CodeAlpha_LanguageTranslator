@@ -20,6 +20,15 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
+  const handleTranslate = async () => {
+    const langPair = `|`
+    const url = `https://api.mymemory.translated.net/get?q=&langpair=`
+
+    const response = await fetch(url)
+    const data = await response.json()
+    setTranslatedText(data.responseData.translatedText)
+  }
+
   return (
     <div className="translator">
       <h1>Language Translator</h1>
@@ -64,7 +73,7 @@ function App() {
         rows={5}
       />
 
-      <button className="translate-btn" onClick={() => console.log('translate')}>
+      <button className="translate-btn" onClick={handleTranslate}>
         Translate
       </button>
     </div>
