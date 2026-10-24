@@ -108,6 +108,13 @@ function App() {
       </button>
 
       {error && <p className="error-msg">{error}</p>}
+
+      {translatedText && (
+        <div className="result">
+          <h2>Translation</h2>
+          <p className="result-text">{translatedText}</p>
+        </div>
+      )}
     </div>
   )
 }
