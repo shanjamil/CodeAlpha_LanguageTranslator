@@ -103,3 +103,19 @@
   line-height: 1.5;
   word-wrap: break-word;
 }
+
+@media (max-width: 480px) {
+  .translator {
+    margin: 20px auto;
+    padding: 20px 16px;
+  }
+
+  .translator h1 {
+    font-size: 22px;
+  }
+
+  .lang-selectors {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
