@@ -8,8 +8,15 @@ const languages = [
   { code: 'de', name: 'German' },
   { code: 'it', name: 'Italian' },
   { code: 'pt', name: 'Portuguese' },
-  { code: 'hi', name: 'Hindi' },
+  { code: 'ru', name: 'Russian' },
+  { code: 'ja', name: 'Japanese' },
+  { code: 'ko', name: 'Korean' },
+  { code: 'zh-CN', name: 'Chinese (Simplified)' },
   { code: 'ar', name: 'Arabic' },
+  { code: 'hi', name: 'Hindi' },
+  { code: 'tr', name: 'Turkish' },
+  { code: 'nl', name: 'Dutch' },
+  { code: 'pl', name: 'Polish' },
 ]
 
 function App() {
