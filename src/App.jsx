@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 const languages = [
@@ -54,8 +54,8 @@ function App() {
     setLoading(true)
 
     try {
-      const langPair = `|`
-      const url = `https://api.mymemory.translated.net/get?q=&langpair=`
+      const langPair = `${sourceLang}|${targetLang}`
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText.trim())}&langpair=${encodeURIComponent(langPair)}`
 
       const response = await fetch(url)
 
