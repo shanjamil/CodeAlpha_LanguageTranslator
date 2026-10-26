@@ -17,6 +17,7 @@ const languages = [
   { code: 'tr', name: 'Turkish' },
   { code: 'nl', name: 'Dutch' },
   { code: 'pl', name: 'Polish' },
+  { code: 'ur', name: 'Urdu' },
 ]
 
 function App() {
